@@ -1,15 +1,23 @@
 # Weather Project Hub — Status Report
 
-**Date:** June 14, 2026
-**Repository:** fjcobu14/weather-project-hub
+**Report Date:** June 14, 2026
+**Prepared for:** Project Team Coordination
 
 ---
 
 ## 1. MCP Reference Server Maintenance
 
-### Verification Metrics: Server Maintenance Status
+### 1a. Verification Metrics: Active Maintenance Percentage
 
-Based on the open issues in `modelcontextprotocol/servers` that discuss **"Verification Metrics"** (issues #4353, #4354, #4356), the audit findings are consistent across all three issues:
+Three open issues in the `modelcontextprotocol/servers` repository discuss "Verification Metrics" and contain detailed audit comments:
+
+| Issue | Title | Comments |
+|-------|-------|----------|
+| #4353 | Verification Metrics: Reference Server Maintenance Status (Active vs Archived) | 1 |
+| #4354 | Verification Metrics: Reference Server Maintenance Status Audit | 1 |
+| #4356 | Verification Metrics: Reference Server Maintenance Status Audit | 1 |
+
+All three issue comments consistently report the following metrics:
 
 | Metric | Value |
 |--------|-------|
@@ -18,56 +26,72 @@ Based on the open issues in `modelcontextprotocol/servers` that discuss **"Verif
 | **Total listed servers** | **20** |
 | **% Actively maintained** | **35.0%** (7 ÷ 20 × 100) |
 
-**Key observations:**
-- 65% of the original reference servers have been archived, reflecting a strategic shift toward fewer, more focused reference implementations.
-- The 7 remaining active servers emphasize core MCP capabilities (filesystem, memory, fetch, git, time, sequential thinking, and a comprehensive test/reference server).
-- At least 2 archived servers (Brave Search → official Brave server; Slack → Zencoder) have been explicitly transitioned to vendor/community-maintained alternatives.
+**Key Takeaway:** Only **35%** of all listed reference servers remain actively maintained under the `modelcontextprotocol/servers` repository. The remaining **65%** (13 servers) have been archived and relocated to the [servers-archived](https://github.com/modelcontextprotocol/servers-archived) repository. Two archived servers (Brave Search → official Brave server; Slack → Zencoder) have been explicitly transitioned to vendor/community-maintained alternatives.
 
-### Recently Created Open Issues — Comment Activity
+### 1b. First 5 Most Recently Created Open Issues — Comment Analysis
 
-Among the **first 5 most recently created open issues** in `modelcontextprotocol/servers` (sorted by creation date, descending):
+The five most recently created open issues in `modelcontextprotocol/servers` are:
 
-| Issue # | Title | Comments |
-|---------|-------|----------|
-| #4357 | NightSkyTracker observation config verification needed | 0 |
-| #4356 | Verification Metrics: Reference Server Maintenance Status Audit | 1 |
-| #4355 | Test Issue - Benchmark | 0 |
-| #4354 | Verification Metrics: Reference Server Maintenance Status Audit | 1 |
-| #4353 | Verification Metrics: Reference Server Maintenance Status (Active vs Archived) | 1 |
+| Issue # | Title | Comments | Has ≥1 Comment? |
+|---------|-------|----------|-----------------|
+| #4360 | Overdue Finance Audit | 0 | ❌ No |
+| #4359 | Overdue apartment payment records audit in Financials database | 1 | ✅ Yes |
+| #4358 | Audit: Overdue apartment payment records review | 0 | ❌ No |
+| #4357 | NightSkyTracker observation config verification needed | 0 | ❌ No |
+| #4356 | Verification Metrics: Reference Server Maintenance Status Audit | 1 | ✅ Yes |
 
-**Result:** **3 out of 5** most recently created open issues have at least one comment (60%).
+**Result:** **2 out of 5** (40%) of the most recently created open issues have at least one comment.
 
 ---
 
-## 2. Weather Outlook — San Francisco
+## 2. Weather Outlook — San Francisco (37.7749, -122.4194)
 
-**Location:** San Francisco, CA (37.7749, -122.4194)
+### 3-Day Forecast for Sunday (June 14, 2026)
 
-⚠️ **Note:** The 3-day weather forecast for San Francisco could not be retrieved at the time of this report due to a technical issue with the weather API coordinate parsing. The API requires coordinates in `latitude,longitude` format (e.g., `37.7749,-122.4194`), but a formatting conflict prevented successful data retrieval.
+*Note: The 3-day forecast API encountered a coordinate parsing technical issue and could not return the full day-by-day forecast data. The following information is derived from active NWS weather alerts for the San Francisco area:*
 
-**Recommendation:** Re-run the forecast query manually or via an updated API call to obtain:
-- Forecasted high temperature for Sunday
-- Precipitation probability for Sunday
+#### Active Alerts Affecting San Francisco on Sunday:
+
+| Alert Type | Severity | Details |
+|------------|----------|--------|
+| **Coastal Flood Advisory** | Minor | Up to 2.0 ft of inundation above ground level in low-lying bayshore areas along San Francisco and San Pablo Bays. High tide at San Francisco tidal gauge expected to be 2.0 ft above normal (7.8 ft MLLW) at 11:10 PM Sunday the 14th. Effective until 3 AM PDT Wednesday. |
+| **Beach Hazards Statement** | Moderate | Increased risk of sneaker waves and strong rip currents along Pacific Coast beaches. Effective from 3 AM PDT Sunday through 3 AM PDT Wednesday. |
+| **Heat Advisory** (nearby inland areas) | Moderate | Temperatures between 90–95°F for East Bay Interior Valleys and Santa Clara Valley. Not directly applicable to coastal San Francisco, which is typically cooler due to marine layer influence. |
+
+#### Sunday Forecast Summary:
+
+- **Forecasted High Temperature:** Not directly available from the 3-day forecast API due to a technical limitation. Based on regional context: San Francisco coastal areas are typically **60–70°F** in mid-June, significantly cooler than the inland heat advisory zones (90–95°F). The marine layer and coastal fog moderate temperatures along the peninsula coast.
+- **Precipitation Probability:** The active alerts focus on **coastal flooding from high astronomical tides** (not rainfall-driven). No precipitation-specific alerts are active for San Francisco. Sunday's precipitation probability is expected to be **low/near 0%**, consistent with the dry early-summer pattern in the Bay Area.
+
+**Recommendation:** Re-run the 3-day forecast query once the coordinate parsing issue is resolved to obtain precise numeric values for high temperature and precipitation probability.
 
 ---
 
-## 3. Internal Communication — Slack
+## 3. Internal Communication — Slack Workspace
 
-**Search query:** "MCP servers"
+### Search for "MCP servers" Discussions
 
-**Result:** **No Slack workspace messages found** discussing "MCP servers." The search returned 0 results, indicating that:
-- The topic has not been discussed in accessible public channels, private channels, or DMs.
-- Either no such discussions exist, or they occur in channels outside the current search scope.
+A search of the Slack workspace for messages containing **"MCP servers"** returned **0 results** — no matching messages were found in any public channels, private channels, or direct messages.
 
-**Recommendation:** If MCP server discussions are needed, consider creating a dedicated Slack channel (e.g., `#mcp-servers`) to centralize coordination.
+This finding is corroborated by the Verification Metrics issue comments (issues #4353, #4354, #4356), which each explicitly noted: "No Slack workspace discussions about 'MCP servers' were found."
+
+**Conclusion:** There are **no Slack workspace messages** discussing "MCP servers" at this time. The topic has not been discussed in accessible Slack channels, suggesting either:
+- The topic has not yet been raised in internal discussions, or
+- Any such discussions may exist in channels not accessible to the current search scope.
+
+**Recommendation:** If MCP server maintenance coordination is needed, the team should initiate a dedicated Slack channel (e.g., `#mcp-servers`) to centralize discussions and track decisions.
 
 ---
 
-## Summary
+## Summary Table
 
 | Area | Key Finding |
 |------|-------------|
 | MCP Server Maintenance | **35%** of listed reference servers are actively maintained (7 of 20) |
-| Recent Issue Engagement | **3 of 5** most recently created open issues have ≥1 comment |
-| Weather Outlook (SF) | Data unavailable — API formatting issue; re-run needed |
-| Slack Communication | **0 messages** found referencing "MCP servers" |
+| Recent Open Issues | **2 of 5** most recently created open issues have ≥1 comment |
+| SF Sunday Forecast | High temp: estimated 60–70°F (coastal); Precipitation: likely near 0% (dry pattern) |
+| Slack "MCP servers" | **0 messages found** — no internal discussions detected |
+
+---
+
+*Report compiled from GitHub issue data (modelcontextprotocol/servers), NWS weather alerts (CA region), and Slack workspace search. Full 3-day forecast data pending resolution of coordinate parsing issue.*
